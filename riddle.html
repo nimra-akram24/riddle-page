@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Riddle Page</title>
+    <style>
+        body {
+            background-image: url("bg.png");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.715);
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 3px rgb(178, 43, 43), 0 0 25px darkred, 0 0 5px red;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            margin-bottom: 20px;
+            color: lightgray;
+            font-size: 0.5rem;
+        }
+
+        h5 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: black;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgba(241, 46, 46, 0.938);
+            color: black;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: lightgray;
+        }
+
+        .congratulations {
+            font-size: 5rem;
+            color: #ed2064;
+            margin-top: 20px;
+        }
+
+        .celebration {
+            background-image: url('popper.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .final-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.715);
+            border-radius: 10px;
+        }
+
+        #result {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="welcome-page" class="container">
+        <h1>Welcome Boss!</h1>
+        <h2>Let's see how that sexy brain works</h2>
+        <button onclick="startRiddle()">START</button>
+    </div>
+
+    <div id="riddle-page" class="container" style="display: none;">
+        <h3>Guess the Place</h3>
+        <h4>Hint: Arrange the First Alphabets</h4>
+        <p><br>Once upon a time, there was a girl & a boy,(1) she was double of me that what boy calls her</br> 
+        <br>Oh (2)shocking it was, similar they had. Getting crazy day by day,</br>
+        <br>(3)adored by her, the most of him. Whether the light or the (4) of him,</br>
+        <br>she's ready to (5) all by her heart and deep swim</br></p>
+
+        <p><br>Together they shine, (1) they burn, here comes the time, no one could earn.</br>
+        <br>(2)shape of her mouth, when she (3) him, waiting for the winter so together they may have some (4)</br>
+        <br>(5)sound of her as she saw a dark street. Oh what a hell of (6) its been</br></p>
+        <input type="text" id="answer" placeholder="In love how that brain working!!">
+        <button onclick="checkAnswer()">Go Pro</button>
+    </div>
+
+    <div id="congratulations-page" class="celebration" style="display: none;">
+        <div class="final-container">
+            <div class="congratulations">Congratulations!</div>
+            <h5>Meet me there tomorrow at 8:00 PM</h5>
+        </div>
+    </div>
+
+    <script>
+        function startRiddle() {
+            document.getElementById('welcome-page').style.display = 'none';
+            document.getElementById('riddle-page').style.display = 'block';
+        }
+
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value.toLowerCase();
+            if (answer === 'dagwood') {
+                document.getElementById('riddle-page').style.display = 'none';
+                document.getElementById('congratulations-page').style.display = 'flex';
+            } else {
+                alert('Seriously??? You can do better boss, Try again!');
+            }
+        }
+    </script>
+</body>
+</html>
+
